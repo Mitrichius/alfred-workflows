@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mitrichius.ssh</string>
+	<key>connections</key>
+	<dict>
+		<key>96791904-63E0-488C-88B4-0AB8A836D4E2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C3BDB91F-B450-46D3-82A6-6F1D00846A1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dmitry Kolosov</string>
+	<key>description</key>
+	<string>Fast ssh, using ssh-config</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ssh</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ssh</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>query=$1
+
+json='{"items": ['
+jsonEnd=']}'
+
+sshconfig="$(grep -w -i Host ~/.ssh/config | sed 's/Host //g')"
+
+hosts=()
+while read -r host; do
+    if [ "${host}" = '*' ] || [[ "${host}" != *"${query}"* ]]; then
+        continue
+    fi
+    hosts+=("{\"title\": \"${host}\", \"autocomplete\": \"${host}\", \"arg\": \"${host}\"}")
+done &lt;&lt;&lt; "${sshconfig}"
+hosts+=("{\"title\": \"${query}\", \"autocomplete\": \"${query}\", \"arg\": \"${query}\"}")
+
+items=$( IFS=','; echo "${hosts[*]}")
+
+echo ${json}${items}${jsonEnd}
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>SSH to</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>96791904-63E0-488C-88B4-0AB8A836D4E2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>ssh {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>C3BDB91F-B450-46D3-82A6-6F1D00846A1C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>96791904-63E0-488C-88B4-0AB8A836D4E2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>30</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>C3BDB91F-B450-46D3-82A6-6F1D00846A1C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>http://dmitrykolosov.ru</string>
+</dict>
+</plist>

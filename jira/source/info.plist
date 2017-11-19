@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mitrichius.jira</string>
+	<key>connections</key>
+	<dict>
+		<key>784B5885-4FFC-43FB-9560-ADF35576C596</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16EDF099-7044-4B3C-9989-96EB66AD2609</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D2258BE4-B2BB-4B74-8110-830A740A87BE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2103E8EC-C89B-46DF-B6DC-993F69FC4FA8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EF9EF77A-FE77-4D38-B81B-BA34F3A51E05</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D881DF72-5710-499F-ABE9-80FB3EA8FC84</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dmitry Kolosov</string>
+	<key>description</key>
+	<string>Fast links - dashboard, create, search, specific issue by number</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Jira</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>jiramain</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open main page</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D2258BE4-B2BB-4B74-8110-830A740A87BE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>jirasearch</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Search jira</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EF9EF77A-FE77-4D38-B81B-BA34F3A51E05</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://{var:host}/issues/?jql=text%20~%20%22{query}%22</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>D881DF72-5710-499F-ABE9-80FB3EA8FC84</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://{var:host}/secure/Dashboard.jspa</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>2103E8EC-C89B-46DF-B6DC-993F69FC4FA8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://{var:host}/secure/CreateIssue!default.jspa</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>16EDF099-7044-4B3C-9989-96EB66AD2609</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>jiranew</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Create new issue</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>784B5885-4FFC-43FB-9560-ADF35576C596</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>keyword</key>
+				<string>j</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>$query = "{query}";
+$host = getenv('host');
+$protocol = getenv('https') === 'true' ? 'https://' : 'http://';
+$projects = explode(',', getenv('projects'));
+
+$result = ['items'];
+
+if (is_numeric($query)) {
+	foreach ($projects as $project) {	
+		$url = $protocol . $host . '/browse/' . $project . '-' . $query;
+		$result['items'][] = createItem($url);
+	}	
+} else {
+	$url = $protocol . $host . '/browse/' . $query;
+	$result['items'][] = createItem($url);
+}
+
+function createItem($url) {
+	return [
+		'title' =&gt; $url,
+		'arg' =&gt; $url,
+		'valid' =&gt; 'yes',
+		'icon' =&gt; 'icon.png'
+	];
+}
+
+echo json_encode($result);</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Enter Issue Key</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Environment variables
+- host: your jira host, without protocol (e.g. jira.ru)
+- https: false/true, https support
+- projects: list of project codes, comma separated (e.g. DEV,QA,DESIGN)</string>
+	<key>uidata</key>
+	<dict>
+		<key>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>16EDF099-7044-4B3C-9989-96EB66AD2609</key>
+		<dict>
+			<key>xpos</key>
+			<integer>430</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>2103E8EC-C89B-46DF-B6DC-993F69FC4FA8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>784B5885-4FFC-43FB-9560-ADF35576C596</key>
+		<dict>
+			<key>xpos</key>
+			<integer>290</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>D2258BE4-B2BB-4B74-8110-830A740A87BE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>D881DF72-5710-499F-ABE9-80FB3EA8FC84</key>
+		<dict>
+			<key>xpos</key>
+			<integer>710</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>EF9EF77A-FE77-4D38-B81B-BA34F3A51E05</key>
+		<dict>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>host</key>
+		<string>jira.ru</string>
+		<key>https</key>
+		<string>false</string>
+		<key>projects</key>
+		<string>DEV,QA,DESIGN</string>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>http://dmitrykolosov.ru</string>
+</dict>
+</plist>
