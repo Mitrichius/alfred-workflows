@@ -10,6 +10,9 @@ Fast links - dashboard, create, search, specific issue by number
 - https: false/true, https support
 - projects: list of project codes, comma separated (e.g. DEV,QA,DESIGN)
 
+## Layout Fixer
+Fix keyboard layout RU -> EN, EN -> RU via hotkey or keyword
+
 ## PHPDoc
 Open php doc by hotkey
 #### Environment variables
