@@ -6,7 +6,7 @@
 	<string>com.mitrichius.sorting</string>
 	<key>connections</key>
 	<dict>
-		<key>B1CC8A3B-2DB8-4CC3-9751-DB55586093AC</key>
+		<key>0922A832-3CDA-4A16-A998-F14F7C8C61EE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -23,7 +23,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B1CC8A3B-2DB8-4CC3-9751-DB55586093AC</string>
+				<string>E78BC972-0BA1-49EE-82BC-62F8221F91FD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E78BC972-0BA1-49EE-82BC-62F8221F91FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FD58018C-DC39-4396-A00F-A04372220916</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -36,7 +49,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B1CC8A3B-2DB8-4CC3-9751-DB55586093AC</string>
+				<string>0922A832-3CDA-4A16-A998-F14F7C8C61EE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -70,7 +83,7 @@
 				<key>hotkey</key>
 				<integer>126</integer>
 				<key>hotmod</key>
-				<integer>11141120</integer>
+				<integer>12189696</integer>
 				<key>hotstring</key>
 				<string>↑</string>
 				<key>leftcursor</key>
@@ -93,37 +106,20 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>100</integer>
+				<integer>102</integer>
 				<key>script</key>
-				<string>$query = "{query}";
-$array = explode(PHP_EOL, $query);
-
-$order = $array[0];
-unset($array[0]);
-
-foreach ($array as $index =&gt; $string) {
-	if ($string == "") {
-		unset($array[$index]);
-	}
-}
-
-natsort($array);
-if ($order == "desc") {
-	$array = array_reverse($array);
-}
-
-echo implode(PHP_EOL, $array);</string>
+				<string>echo -n "{query}" | sort -n | grep -Ev "^$"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>B1CC8A3B-2DB8-4CC3-9751-DB55586093AC</string>
+			<string>E78BC972-0BA1-49EE-82BC-62F8221F91FD</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -142,6 +138,29 @@ echo implode(PHP_EOL, $array);</string>
 			<key>uid</key>
 			<string>FD58018C-DC39-4396-A00F-A04372220916</string>
 			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>echo -n "{query}" | sort -nr | grep -Ev "^$"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0922A832-3CDA-4A16-A998-F14F7C8C61EE</string>
+			<key>version</key>
 			<integer>2</integer>
 		</dict>
 		<dict>
@@ -151,8 +170,6 @@ echo implode(PHP_EOL, $array);</string>
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>1</integer>
-				<key>argumenttext</key>
-				<string>dsc</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -160,7 +177,7 @@ echo implode(PHP_EOL, $array);</string>
 				<key>hotkey</key>
 				<integer>125</integer>
 				<key>hotmod</key>
-				<integer>11141120</integer>
+				<integer>12189696</integer>
 				<key>hotstring</key>
 				<string>↓</string>
 				<key>leftcursor</key>
@@ -182,19 +199,26 @@ echo implode(PHP_EOL, $array);</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>B1CC8A3B-2DB8-4CC3-9751-DB55586093AC</key>
+		<key>0922A832-3CDA-4A16-A998-F14F7C8C61EE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>150</integer>
 		</dict>
 		<key>CEE5FDE4-A33B-43BF-99BD-6623B143C420</key>
 		<dict>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>10</integer>
+		</dict>
+		<key>E78BC972-0BA1-49EE-82BC-62F8221F91FD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>10</integer>
 		</dict>
 		<key>F36A4E88-5C02-4306-9516-70B45B480E3D</key>
 		<dict>
@@ -206,13 +230,15 @@ echo implode(PHP_EOL, $array);</string>
 		<key>FD58018C-DC39-4396-A00F-A04372220916</key>
 		<dict>
 			<key>xpos</key>
-			<integer>440</integer>
+			<integer>630</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>85</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
 	<string>http://dmitrykolosov.ru</string>
 </dict>
